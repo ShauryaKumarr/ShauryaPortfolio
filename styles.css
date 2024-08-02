@@ -200,22 +200,22 @@ body {
 
 .modal-content {
   background-color: #fefefe;
-  padding: 20px; /* Reduced padding */
+  padding: 20px;
   border: none;
-  width: 80%; /* Increased width */
-  max-width: 1000px; /* Increased max-width */
-  height: 80%; /* Reduced height */
-  max-height: 80vh; /* Reduced max-height */
+  width: 90%; /* Increased width */
+  max-width: 1200px; /* Increased max-width */
+  height: 90%; /* Increased height */
+  max-height: 90vh; /* Increased max-height */
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   animation: fadeIn 0.5s;
-  overflow: hidden; /* Added to prevent overflow */
+  overflow: hidden;
 }
 
 .modal-content h2 {
   margin-top: 0;
-  margin-bottom: 10px; /* Reduced margin-bottom */
+  margin-bottom: 10px;
   color: #333;
 }
 
@@ -223,7 +223,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 10px; /* Reduced margin-bottom */
+  margin-bottom: 10px;
 }
 
 .modal-content .links a {
@@ -242,9 +242,9 @@ body {
 
 .close {
   color: #aaa;
-  position: absolute; /* Changed from float to absolute */
-  right: 20px; /* Adjusted positioning */
-  top: 20px; /* Adjusted positioning */
+  position: absolute;
+  right: 20px;
+  top: 20px;
   font-size: 28px;
   font-weight: bold;
 }
@@ -261,8 +261,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Use full width */
-  height: 100%; /* Use full height */
+  width: 100%;
+  height: 80%; /* Adjust height to fit within modal */
   border: 2px solid #444;
   border-radius: 10px;
   overflow: hidden;
