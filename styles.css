@@ -64,33 +64,6 @@ body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .main-content {
-    padding: 10px;
-  }
-
-  .page-intro h1 {
-    font-size: 2.5em;
-  }
-
-  .page-intro h3 {
-    font-size: 1em;
-  }
-
-  .about p {
-    font-size: 1.2em;
-    line-height: 1.4;
-  }
-
-  .social-links ul {
-    flex-direction: column;
-  }
-
-  .social-links li {
-    margin: 10px 0;
-  }
-}
-
 /* specific styles for resume page */
 .resume-content {
   max-width: none; /* Remove max-width constraint */
@@ -207,18 +180,6 @@ body {
   color: #1a1a1a;
   border: 2px solid #e0e0e0;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-@media (max-width: 768px) {
-  .project-template {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .project-tile {
-    width: 100%;
-    max-width: none;
-  }
 }
 
 /* modal styles */
