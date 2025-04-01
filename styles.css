@@ -111,14 +111,14 @@ body {
 
 .resume-content .embed-container {
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   margin: 20px auto 30px;
   border: none;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   background-color: #1e293b;
-  max-height: 900px;
+  max-height: 1000px;
 }
 
 .resume-content embed {
