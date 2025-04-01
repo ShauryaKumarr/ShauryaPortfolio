@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaurya Kumar</title>
+    <title>Blog | Shaurya Kumar</title>
+    <meta name="description" content="Personal blog by Shaurya Kumar sharing my journey through tech, research, and entrepreneurship">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -30,17 +31,163 @@
 
     <!-- main content -->
     <div class="main-content">
-        <h1 id="page-title">Blog</h1>
-        <div class="content">
-            <p>stay tuned for updates and blog posts on my journey and experiences. check back soon!</p>
+        <div class="section-header">
+            <h1 id="page-title">My Journey</h1>
+            <div class="underline"></div>
+        </div>
+        
+        <p class="blog-intro">
+            Welcome to my personal blog where I share my experiences, challenges, and lessons learned on my path through technology, 
+            research, and entrepreneurship. These blogs are not meant to be edited or polished - just raw and authentic thoughts and reflections about my journey.
+        </p>
+        
+        <div class="blog-posts">
+            <!-- First Blog Post -->
+            <article class="blog-post">
+                <div class="blog-header" onclick="toggleBlogContent('blog1')">
+                    <h2 class="blog-title">Perseverance</h2>
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> March 31, 2025</span>
+                        <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Updates and reflections on the last few months of my life!
+                    </p>
+                    <button class="read-more-btn">Read more <i class="fas fa-chevron-down"></i></button>
+                </div>
+                
+                <div id="blog1" class="blog-content">
+                    
+                    <div class="blog-text">
+                        <p>
+                            (coming soon sorry for the clickbait)
+                        </p>
+                        
+
+                        
+                       
+                    </div>
+                    
+                    <button class="collapse-btn" onclick="toggleBlogContent('blog1'); event.stopPropagation();">
+                        <i class="fas fa-chevron-up"></i> Collapse
+                    </button>
+                </div>
+                
+                <div class="blog-footer">
+                    <div class="blog-tags">
+                        <span class="blog-tag">AI Research</span>
+                        <span class="blog-tag">University</span>
+                        <span class="blog-tag">Personal Growth</span>
+                    </div>
+                    
+                    <div class="blog-actions">
+                        <button class="like-button" onclick="likePost('blog1')">
+                            <i class="far fa-heart"></i> <span class="like-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Blog Posts Coming Soon -->
+            <div class="coming-soon">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h2>More Posts Coming Soon</h2>
+                <p>I'm currently working on more blog posts about my experiences in hackathons, research challenges, and my journey into entrepreneurship.</p>
+                <p>Check back soon for new stories and insights from my personal journey!</p>
+                
+                <div class="newsletter">
+                    <h3>Get notified when new posts are published</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="primary-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- copyright footer -->
     <div class="copyright">
         <footer>
-            <p>&copy 2024 Shaurya Kumar</p>
+            <p>&copy; 2024 Shaurya Kumar</p>
         </footer>
     </div>
+    
+    <script src="scripts.js"></script>
+    <script>
+        // Blog specific functionality
+        function toggleBlogContent(blogId) {
+            const content = document.getElementById(blogId);
+            const blogPost = content.closest('.blog-post');
+            const readMoreBtn = blogPost.querySelector('.read-more-btn');
+            
+            content.classList.toggle('expanded');
+            
+            // Update the read more button
+            if (content.classList.contains('expanded')) {
+                readMoreBtn.style.display = 'none';
+                
+                // Smooth scroll to the top of the blog post
+                blogPost.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                readMoreBtn.style.display = 'inline-flex';
+                readMoreBtn.querySelector('i').classList.remove('fa-chevron-up');
+                readMoreBtn.querySelector('i').classList.add('fa-chevron-down');
+            }
+        }
+        
+        function likePost(blogId) {
+            const likeButton = event.currentTarget;
+            const likeCount = likeButton.querySelector('.like-count');
+            const icon = likeButton.querySelector('i');
+            
+            if (likeButton.classList.contains('liked')) {
+                // Unlike
+                likeButton.classList.remove('liked');
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                likeCount.textContent = parseInt(likeCount.textContent) - 1;
+            } else {
+                // Like
+                likeButton.classList.add('liked');
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                likeCount.textContent = parseInt(likeCount.textContent) + 1;
+            }
+            
+            // Prevent the click from bubbling up to the blog header
+            event.stopPropagation();
+            
+            // Store like status in local storage
+            const storageKey = `blog_${blogId}_liked`;
+            localStorage.setItem(storageKey, likeButton.classList.contains('liked'));
+            localStorage.setItem(`blog_${blogId}_count`, likeCount.textContent);
+        }
+        
+        // Initialize likes from local storage
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.blog-post').forEach(post => {
+                const blogId = post.querySelector('.blog-content').id;
+                const likeButton = post.querySelector('.like-button');
+                const likeCount = likeButton.querySelector('.like-count');
+                const icon = likeButton.querySelector('i');
+                
+                const isLiked = localStorage.getItem(`blog_${blogId}_liked`) === 'true';
+                const savedCount = localStorage.getItem(`blog_${blogId}_count`);
+                
+                if (isLiked) {
+                    likeButton.classList.add('liked');
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                }
+                
+                if (savedCount !== null) {
+                    likeCount.textContent = savedCount;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

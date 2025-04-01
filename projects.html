@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaurya Kumar</title>
+    <title>Projects | Shaurya Kumar</title>
+    <meta name="description" content="Portfolio of projects by Shaurya Kumar, including AI research, hackathon projects, and more">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,42 +33,53 @@
     <!-- project content -->
     <div class="main-content">
         <div class="project-content">
-            <h1 id="page-title">My Projects</h1>
+            <div class="section-header">
+                <h1 id="page-title">My Projects</h1>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+                <button class="filter-btn" data-filter="personal">Personal</button>
+            </div>
+            
             <div class="project-template">
-                <div class="project-tile" onclick="openModal('modal1')">
+                <div class="project-tile" data-category="research" onclick="openModal('modal1')">
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
                     <h3>Undergraduate AI Researcher @ UD</h3>
                     <p>Engineered a sophisticated medical AI tool that transforms user-inputted information into accurate patient vignettes. This tool leverages the Retrieval Augmented Generation (RAG) technique to effectively mitigate bias in large language models (LLMs). I also implemented advanced evaluation techniques for text summarization performed by Transformers, incorporating BLEU and ROUGE metrics to assess the correlation between patient context and the generated vignettes.
                     </p>
                 </div>
-                <div class="project-tile" onclick="window.open('https://devpost.com/software/roomieud?ref_content=my-projects-tab&ref_feature=my_projects', '_blank')">
+                <div class="project-tile" data-category="hackathon" onclick="window.open('https://devpost.com/software/roomieud?ref_content=my-projects-tab&ref_feature=my_projects', '_blank')">
+                    <div class="project-icon"><i class="fas fa-user-friends"></i></div>
                     <h3>RoomieUD (Hackathon Winning Project @ HenHacks)</h3>
                     <p>A Tinder-inspired app that uses Euclidean geometry algorithms and numerical point-based questionnaires to find compatible roommates with incredibly accurate results.
                     </p>
                 </div>
-                <div class="project-tile" onclick="openModal('modal3')">
+                <div class="project-tile" data-category="research" onclick="openModal('modal3')">
+                    <div class="project-icon"><i class="fas fa-microscope"></i></div>
                     <h3>Sensor Developer/Researcher @ DSU</h3>
                     <p>Funded by DoD & NSF. Utilized Python and a Raspberry-Pi to configure an OPC-N3 optical sensor to output PM readings with user-editable features.
                     </p>
                 </div>
-                <div class="project-tile" onclick="window.open('https://devpost.com/software/surgiscan', '_blank')">
+                <div class="project-tile" data-category="hackathon" onclick="window.open('https://devpost.com/software/surgiscan', '_blank')">
+                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
                     <h3>SurgiScan (1st Place @ HopHacks, Patient Safety Technology Category)</h3>
                     <p>A YOLOv5-powered application that leverages computer vision to accurately detect and track surgical tools in real-time during procedures, preventing them from being left inside the body.
                     </p>
                 </div>
-                <div class="project-tile" onclick="window.open('https://wallofsupport.com/', '_blank')">
+                <div class="project-tile" data-category="personal" onclick="window.open('https://wallofsupport.com/', '_blank')">
+                    <div class="project-icon"><i class="fas fa-comments"></i></div>
                     <h3>Wall Of Support</h3>
-                    <p>(Still in early stages of development, works better on computer. Click info icon on website for full project statement.)
-                    </p>  
-                    <p>
-                        An educational project turned into a meaningful one by creating a public forum where people all around the world can receive and send words
-                        of encouragement and positivity (please check it out! Leave a comment or two :))
-                    </p>
+                    <p>An educational project turned into a meaningful one by creating a public forum where people all around the world can receive and send words of encouragement and positivity (please check it out! Leave a comment or two :))</p>
+                    <div class="project-tag">In Development</div>
                 </div>
-                <div class="project-tile" onclick="openModal('modal5')">
+                <div class="project-tile" data-category="hackathon" onclick="openModal('modal5')">
+                    <div class="project-icon"><i class="fas fa-drone"></i></div>
                     <h3>Sentinel Aid</h3>
-                    <p>
-                        An AI-driven disaster management system that leverages drones to reach inaccessible areas during emergencies. Features include S.O.S. requests, automated footage analysis, and a community-driven aid exchange platform for disaster victims.
-                    </p>
+                    <p>An AI-driven disaster management system that leverages drones to reach inaccessible areas during emergencies. Features include S.O.S. requests, automated footage analysis, and a community-driven aid exchange platform for disaster victims.</p>
                 </div>
             </div>
         </div>
@@ -78,23 +90,19 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal1')">&times;</span>
             <h2>Undergraduate AI Researcher @ UD</h2>
+            <div class="project-details">
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar"></i> 2023 - 2024</span>
+                    <span><i class="fas fa-tag"></i> AI/ML, Healthcare</span>
+                </div>
+            </div>
             <div class="links">
-                <a href="assets/bleu_score.py" download>Download Bleu Score Test</a>
-                <a href="assets/rouge_score.py" download>Download Rouge Score Test</a>
-                <a href="assets/semantic_entropy.py" download>Download Semantic Entropy Test</a>
+                <a href="assets/bleu_score.py" download><i class="fas fa-download"></i> Bleu Score Test</a>
+                <a href="assets/rouge_score.py" download><i class="fas fa-download"></i> Rouge Score Test</a>
+                <a href="assets/semantic_entropy.py" download><i class="fas fa-download"></i> Semantic Entropy Test</a>
             </div>
             <div class="embed-container">
                 <embed src="assets/Summer Scholars - Agrawal & Kumar.pdf" type="application/pdf" />
-            </div>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h2>RoomieUD (Hackathon Winning Project @ HenHacks)</h2>
-            <div class="links">
-                <a href="https://devpost.com/software/roomieud?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank">View on DevPost</a>
             </div>
         </div>
     </div>
@@ -103,8 +111,14 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal3')">&times;</span>
             <h2>Sensor Developer/Researcher @ DSU</h2>
+            <div class="project-details">
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar"></i> 2022 - 2023</span>
+                    <span><i class="fas fa-tag"></i> IoT, Environmental</span>
+                </div>
+            </div>
             <div class="links">
-                <a href="assets/sensor_test.py" download>Download Sensor Configuration Script</a>
+                <a href="assets/sensor_test.py" download><i class="fas fa-download"></i> Sensor Configuration Script</a>
             </div>
             <div class="embed-container">
                 <embed src="assets/Summer Symposium Abstract_PM Team_Khan.docx.pdf" type="application/pdf" />
@@ -112,22 +126,18 @@
         </div>
     </div>
 
-    <div id="modal4" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <h2>SurgiScan (1st Place @ HopHacks, Patient Safety Technology Category)</h2>
-            <div class="links">
-                <a href="https://devpost.com/software/surgiscan" target="_blank">View on DevPost</a>
-            </div>
-        </div>
-    </div>
-
     <div id="modal5" class="modal" style="display:none;">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
             <h2>Sentinel Aid</h2>
+            <div class="project-details">
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                    <span><i class="fas fa-tag"></i> AI, Disaster Management</span>
+                </div>
+            </div>
             <div class="links">
-                <a href="https://devpost.com/software/sentinal-aid" target="_blank">View on DevPost</a>
+                <a href="https://devpost.com/software/sentinal-aid" target="_blank"><i class="fas fa-external-link-alt"></i> View on DevPost</a>
             </div>
         </div>
     </div>
@@ -135,7 +145,7 @@
     <!-- copyright footer -->
     <div class="copyright">
         <footer>
-            <p>&copy 2024 Shaurya Kumar</p>
+            <p>&copy; 2024 Shaurya Kumar</p>
         </footer>
     </div>
 
