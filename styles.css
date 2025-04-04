@@ -91,8 +91,8 @@ body {
 
 /* specific styles for resume page */
 .resume-content {
-  max-width: 1400px;
-  width: 95%;
+  max-width: 1600px;
+  width: 98%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,20 +111,21 @@ body {
 
 .resume-content .embed-container {
   width: 100%;
-  height: 90vh;
+  height: 95vh;
   margin: 20px auto 30px;
   border: none;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   background-color: #1e293b;
-  max-height: 1200px;
+  max-height: 1500px;
 }
 
 .resume-content embed {
   width: 100%;
   height: 100%;
   border-radius: 12px;
+  background-color: white;
 }
 
 /* page intro styles */
