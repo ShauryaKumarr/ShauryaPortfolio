@@ -11,6 +11,8 @@ body {
   justify-content: center;
   min-height: 100vh;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* navbar styles */
@@ -121,7 +123,7 @@ body {
   max-height: 1500px;
 }
 
-.resume-content embed {
+.resume-content iframe {
   width: 100%;
   height: 100%;
   border-radius: 12px;
@@ -449,7 +451,7 @@ embed {
 /* animation styles */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+      opacity: 0;
     transform: translateY(20px);
   }
   to {
@@ -464,7 +466,7 @@ embed {
     transform: translateY(50px);
   }
   to {
-    opacity: 1;
+      opacity: 1;
     transform: translateY(0);
   }
 }
@@ -516,6 +518,11 @@ embed {
   
   .navbar li a {
     padding: 8px 15px;
+  }
+  
+  .resume-content .embed-container {
+    height: 80vh;
+    margin: 15px auto 20px;
   }
 }
 
@@ -1238,4 +1245,175 @@ embed {
   .page-intro {
     max-width: 100%;
   }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navbar li a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section Mobile */
+    .hero-section {
+        min-height: 40vh;
+        padding: 20px;
+    }
+
+    .page-intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-intro h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Main Content Mobile */
+    .main-content {
+        margin-top: 80px;
+        padding: 20px 15px;
+    }
+
+    /* Project Grid Mobile */
+    .project-template {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-tile {
+        padding: 20px;
+    }
+
+    /* Blog Mobile */
+    .blog-post {
+        margin: 15px 0;
+    }
+
+    .blog-header {
+        padding: 20px;
+    }
+
+    .blog-title {
+        font-size: 1.5rem;
+    }
+
+    .blog-content {
+        padding: 15px;
+    }
+
+    /* Resume Mobile */
+    .resume-content {
+        padding-top: 80px;
+        width: 100%;
+    }
+
+    .resume-content .embed-container {
+        height: 70vh;
+    }
+
+    /* Skills Mobile */
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skill-category {
+        width: 100%;
+    }
+
+    /* Social Links Mobile */
+    .social-links ul {
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .page-intro h1 {
+        font-size: 2rem;
+    }
+
+    .page-intro h3 {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .blog-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .blog-tags {
+        justify-content: flex-start;
+    }
+}
+
+/* Tablet Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-content {
+        max-width: 90%;
+    }
+
+    .project-template {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-container {
+        gap: 30px;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve touch targets for mobile */
+button, 
+a, 
+input, 
+select {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Improve text readability on mobile */
+body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure proper spacing on mobile */
+* {
+    box-sizing: border-box;
 }
