@@ -1256,36 +1256,43 @@ embed {
 @media (max-width: 768px) {
     .navbar {
         padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
     }
 
     .navbar ul {
         flex-direction: column;
         gap: 5px;
+        padding: 10px 0;
     }
 
     .navbar li a {
-        padding: 8px 15px;
+        padding: 12px 15px;
         font-size: 0.9rem;
     }
 
-    /* Hero Section Mobile */
+    /* Adjust main content spacing for mobile */
+    .main-content {
+        margin-top: 120px; /* Increased to account for taller mobile navbar */
+        padding: 20px 15px;
+    }
+
+    /* Adjust resume content spacing */
+    .resume-content {
+        padding-top: 120px; /* Increased to match main-content */
+        width: 100%;
+    }
+
+    /* Adjust hero section spacing */
     .hero-section {
+        margin-top: 120px; /* Increased to match main-content */
         min-height: 40vh;
         padding: 20px;
-    }
-
-    .page-intro h1 {
-        font-size: 2.5rem;
-    }
-
-    .page-intro h3 {
-        font-size: 1.1rem;
-    }
-
-    /* Main Content Mobile */
-    .main-content {
-        margin-top: 80px;
-        padding: 20px 15px;
     }
 
     /* Project Grid Mobile */
@@ -1315,16 +1322,6 @@ embed {
         padding: 15px;
     }
 
-    /* Resume Mobile */
-    .resume-content {
-        padding-top: 80px;
-        width: 100%;
-    }
-
-    .resume-content .embed-container {
-        height: 70vh;
-    }
-
     /* Skills Mobile */
     .skills-container {
         flex-direction: column;
@@ -1348,12 +1345,28 @@ embed {
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
-    .page-intro h1 {
-        font-size: 2rem;
+    .navbar {
+        padding: 8px 0;
     }
 
-    .page-intro h3 {
-        font-size: 1rem;
+    .navbar ul {
+        padding: 8px 0;
+    }
+
+    .navbar li a {
+        padding: 10px 15px;
+    }
+
+    .main-content {
+        margin-top: 110px; /* Slightly reduced for smaller screens */
+    }
+
+    .resume-content {
+        padding-top: 110px;
+    }
+
+    .hero-section {
+        margin-top: 110px;
     }
 
     .cta-buttons {
