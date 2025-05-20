@@ -93,13 +93,9 @@ body {
 
 /* specific styles for resume page */
 .resume-content {
-  max-width: 1600px;
-  width: 98%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-top: 100px;
+  padding: 80px 20px 40px;
 }
 
 .resume-content .section-header {
@@ -112,22 +108,23 @@ body {
 }
 
 .resume-content .embed-container {
+  position: relative;
   width: 100%;
-  height: 95vh;
-  margin: 20px auto 30px;
-  border: none;
-  border-radius: 12px;
+  height: 0;
+  padding-bottom: 120%; /* Aspect ratio for A4 paper */
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background-color: #1e293b;
-  max-height: 1500px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.resume-content iframe {
+.resume-content embed {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
-  background-color: white;
+  border: none;
 }
 
 /* page intro styles */
@@ -519,11 +516,6 @@ embed {
   .navbar li a {
     padding: 8px 15px;
   }
-  
-  .resume-content .embed-container {
-    height: 80vh;
-    margin: 15px auto 20px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -651,19 +643,32 @@ embed {
 /* Resume page specific styles */
 .resume-actions {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   margin-bottom: 30px;
-  margin-top: 20px;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .resume-actions .primary-btn {
-  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.resume-actions .primary-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 .last-updated {
-  color: #a0a0a0;
+  color: var(--text-color);
   font-size: 0.9rem;
   margin: 0;
 }
@@ -1416,4 +1421,53 @@ body {
 /* Ensure proper spacing on mobile */
 * {
     box-sizing: border-box;
+}
+
+/* Responsive styles for resume page */
+@media (max-width: 768px) {
+    .resume-content {
+        padding: 60px 15px 30px;
+    }
+
+    .embed-container {
+        padding-bottom: 140%; /* Taller aspect ratio for mobile */
+    }
+
+    .resume-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .resume-actions .primary-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-content {
+        padding: 50px 10px 20px;
+    }
+
+    .embed-container {
+        padding-bottom: 160%; /* Even taller for smaller screens */
+    }
+}
+
+/* Fallback styles for browsers that don't support PDF embedding */
+.embed-container:not(:has(embed)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.embed-container:not(:has(embed))::after {
+    content: "PDF preview not available. Please use the download button above.";
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.1rem;
 }
