@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(cp favicon*.png favicon.ico apple-touch-icon.png android-chrome*.png site.webmanifest public/)",
+      "Bash(cp assets/*.pdf assets/*.py public/assets/)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(kill %1)",
+      "WebFetch(domain:aarushspersonalwebsite.vercel.app)",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app)",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/css/029e4b72418ec44d.css)",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/app/page-837de46409f70a80.js)",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/619-ba102abea3e3d0e4.js)",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/4bd1b696-21f374d1156f834a.js)",
+      "Bash(curl -s \"https://aarushspersonalwebsite.vercel.app/_next/static/chunks/255-b907973371c9e4f0.js\")",
+      "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/app/layout-f5ea0b08a0af2e5d.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/)"
+    ]
+  }
+}
