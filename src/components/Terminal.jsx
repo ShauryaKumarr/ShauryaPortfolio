@@ -31,7 +31,7 @@ const COMMANDS = {
   'cat interests': [
     { text: 'AI/ML · Large Language Models · Computer Vision', cls: 'text-stone-200' },
     { text: 'Quantum Computing · FinTech · Mathematics · Entrepreneurship', cls: 'text-stone-200' },
-    { text: 'Soccer · Lifelong FC Barcelona Fan', cls: 'text-stone-200' },
+    { text: 'Soccer · FC Barcelona Fan', cls: 'text-stone-200' },
   ],
   './contact': [
     { text: 'Email     shaurya@udel.edu', cls: 'text-stone-200' },
