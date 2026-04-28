@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa'
 
-const RESUME = '/assets/SK_AprilResume.pdf'
+const RESUME = '/assets/Shaurya_Kumar_Resume_Jan2026.pdf'
 
 export default function Resume() {
   return (

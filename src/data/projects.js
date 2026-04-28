@@ -63,7 +63,10 @@ export const projects = [
     tags: ['React', 'Plaid API', 'Express.js', 'FinTech', 'Sustainability'],
     description:
       'An environmental impact tracker that gamifies sustainable spending by integrating with banking systems via Plaid to measure carbon footprints per transaction. Features AI-powered receipt scanning, personalized eco-friendly alternatives, and a FutureCoins rewards system.',
-    externalLink: 'https://github.com/ShauryaKumarr/FootPrint',
+    externalLinks: [
+      { label: 'GitHub', href: 'https://github.com/ShauryaKumarr/FootPrint' },
+      { label: 'DevPost', href: 'https://devpost.com/software/footprint-xshein' },
+    ],
   },
   {
     id: 6,

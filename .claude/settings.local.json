@@ -16,7 +16,10 @@
       "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/4bd1b696-21f374d1156f834a.js)",
       "Bash(curl -s \"https://aarushspersonalwebsite.vercel.app/_next/static/chunks/255-b907973371c9e4f0.js\")",
       "Bash(curl -s https://aarushspersonalwebsite.vercel.app/_next/static/chunks/app/layout-f5ea0b08a0af2e5d.js)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/)",
+      "Bash(gh api *)",
+      "Bash(brew list *)",
+      "WebFetch(domain:devpost.com)"
     ]
   }
 }

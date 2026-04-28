@@ -5,7 +5,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import {
   FaBrain, FaMicroscope, FaUsers, FaHeartbeat,
   FaComments, FaShieldAlt, FaLeaf,
-  FaExternalLinkAlt, FaDownload, FaTimes, FaCalendarAlt, FaTags,
+  FaExternalLinkAlt, FaDownload, FaTimes, FaCalendarAlt, FaTags, FaGithub,
 } from 'react-icons/fa'
 
 const iconMap = { brain: FaBrain, microscope: FaMicroscope, users: FaUsers, heartpulse: FaHeartbeat, comments: FaComments, shield: FaShieldAlt, leaf: FaLeaf }
@@ -68,6 +68,8 @@ export default function Projects() {
     if (project.externalLink) window.open(project.externalLink, '_blank', 'noreferrer')
     else setSelectedProject(project)
   }
+
+  const linkIcon = (label) => label === 'GitHub' ? <FaGithub size={11} /> : <FaExternalLinkAlt size={11} />
 
   return (
     <motion.div
@@ -143,7 +145,7 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    {project.externalLink && (
+                    {(project.externalLink || project.externalLinks) && (
                       <FaExternalLinkAlt size={11} className="absolute top-5 right-5 text-stone-700 group-hover:text-amber-400 transition-colors z-20" />
                     )}
                   </TiltCard>
@@ -189,6 +191,17 @@ export default function Projects() {
                     <a key={link.label} href={link.href} download={link.download}
                       className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/8 border border-amber-500/20 text-amber-400 hover:bg-amber-500/12 hover:text-amber-300 transition-all text-xs font-medium">
                       <FaDownload size={11} />{link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {selectedProject.externalLinks && (
+                <div className="flex flex-wrap gap-3 px-6 pt-5 flex-shrink-0">
+                  {selectedProject.externalLinks.map((link) => (
+                    <a key={link.label} href={link.href} target="_blank" rel="noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/8 border border-amber-500/20 text-amber-400 hover:bg-amber-500/12 hover:text-amber-300 transition-all text-xs font-medium">
+                      {linkIcon(link.label)}{link.label}
                     </a>
                   ))}
                 </div>
