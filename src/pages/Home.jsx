@@ -31,6 +31,7 @@ const socials = [
 
 const aboutParagraphs = [
   "I am currently a student at the University of Delaware, pursuing a double major in Computer Science and Applied Mathematics. I've worked as a researcher at Delaware State University and the University of Delaware, contributing to projects focused on AI/ML and data-driven problem-solving.",
+  "I will be joining JPMorgan Chase as an incoming Software Engineer on the Consumer & Community Banking team, where I'll be focusing on AI and Data Analytics.",
   "My interests include artificial intelligence, machine learning, quantitative analysis, quantum computing, and entrepreneurship. I'm passionate about leveraging technology to solve real-world problems and create meaningful impact.",
   "I aim to drive innovation at the intersection of AI and real-world challenges. My ultimate goal is to pursue entrepreneurship — either by founding my own tech startup or joining an early-stage venture where I can make a significant impact and help transform innovative ideas into reality.",
 ]
@@ -161,6 +162,7 @@ export default function Home() {
               className="flex flex-wrap gap-3 mt-10"
             >
               {[
+                { label: 'Incoming SWE @ JPMorgan Chase' },
                 { label: '3+ Hackathon Wins' },
                 { label: '2 Research Labs' },
                 { label: 'DoD & NSF Funded' },
