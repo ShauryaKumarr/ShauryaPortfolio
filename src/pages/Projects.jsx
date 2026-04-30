@@ -175,6 +175,9 @@ export default function Projects() {
               <div className="flex items-start justify-between p-6 border-b border-[#272219] flex-shrink-0">
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-stone-50 leading-tight">{selectedProject.title}</h2>
+                  {selectedProject.subtitle && (
+                    <p className="text-amber-500/70 text-sm font-medium mt-1">{selectedProject.subtitle}</p>
+                  )}
                   <div className="flex flex-wrap items-center gap-4 mt-2 text-stone-600 text-xs">
                     <span className="flex items-center gap-1.5"><FaCalendarAlt size={10} />{selectedProject.period}</span>
                     <span className="flex items-center gap-1.5"><FaTags size={10} />{selectedProject.tags.join(' · ')}</span>
@@ -184,6 +187,12 @@ export default function Projects() {
                   <FaTimes size={18} />
                 </button>
               </div>
+
+              {selectedProject.description && (
+                <div className="px-6 pt-5 flex-shrink-0">
+                  <p className="text-stone-400 text-sm leading-relaxed">{selectedProject.description}</p>
+                </div>
+              )}
 
               {selectedProject.links && (
                 <div className="flex flex-wrap gap-3 px-6 pt-5 flex-shrink-0">
