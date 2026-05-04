@@ -5,7 +5,7 @@ const PROMPT = 'shaurya@portfolio:~$'
 const NEOFETCH = [
   { art: '  ░░░░░░░░░░░░  ', key: '',           val: 'shaurya@portfolio',           valClass: 'text-stone-50 font-bold' },
   { art: '░░░░░░░░░░░░░░░░', key: '',           val: '─────────────────────────────', valClass: 'text-stone-700' },
-  { art: '░░░░░░░░░░░░░░░░', key: 'OS         ', val: 'Human v22',                   valClass: 'text-stone-200' },
+  { art: '░░░░░░░░░░░░░░░░', key: 'Owner         ', val: 'Shaurya Kumar',                   valClass: 'text-stone-200' },
   { art: '░░░░░░░░░░░░░░░░', key: 'Education  ', val: 'CS + Applied Math @ UDel',    valClass: 'text-stone-200' },
   { art: '░░░░░░░░░░░░░░░░', key: 'Research   ', val: 'AI/ML · LLMs & RAG · CV',     valClass: 'text-stone-200' },
   { art: '░░░░░░░░░░░░░░░░', key: 'Hackathons ', val: '3+ wins (HenHacks, HopHacks)', valClass: 'text-stone-200' },
