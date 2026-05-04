@@ -7,7 +7,7 @@ export const blogPosts = [
     excerpt: 'Updates and reflections of my life so far!',
     tags: ['AI Research', 'University', 'Personal Growth'],
     content: [
-      'yeah you guys got clickbaited again i still have made this blog lol',
+      'yeah you guys got clickbaited again i still have yet to make this blog lol',
 
     ],
   },
